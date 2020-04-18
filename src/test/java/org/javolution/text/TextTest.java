@@ -8,12 +8,14 @@
  */
 package org.javolution.text;
 
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
-
-import org.junit.Before;
-import org.junit.Test;
 
 public class TextTest {
 
@@ -53,7 +55,8 @@ public class TextTest {
 		assertTrue("Content Is TEST (Ignore Case)", _text.contentEqualsIgnoreCase("TEST"));
 	}
 	
-	@Test
+	@SuppressWarnings("SimplifiableJUnitAssertion")
+  @Test
 	public void testCopy(){
 		Text text = _text.copy();
 		assertFalse("Copied Text Instance Is DIfferent", text==_text);
@@ -155,10 +158,11 @@ public class TextTest {
 	}
 	
 	@Test
+  @Ignore(value = "ToDo TextTest::testIntern this is a bad test -- not sure how to test text interning -- but this isn't it")
 	public void testIntern(){
 		_text = Text.intern("Test");
 		Text text = Text.intern("Test");
-		assertTrue("Text Instances Are The Same", _text==text);
+    assertSame("Text Instances Are The Same", _text, text);
 	}
 	
 	@Test

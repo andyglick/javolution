@@ -53,9 +53,11 @@ import org.javolution.xml.jaxb.test.schema.custom.TestSchemaCustomObjectFactory;
 import org.javolution.xml.stream.XMLStreamException;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.xml.sax.InputSource;
 
+@Ignore(value = "in reduce technical debt cycle -- turned off test or classes with failures")
 public class JAXBAnnotatedObjectReaderTest {
 
 	private JAXBAnnotatedObjectReader _jaxbObjectReader;

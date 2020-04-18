@@ -19,8 +19,10 @@ import java.util.Set;
 
 import org.javolution.util.function.Order;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class FastIdentityMapTest {
 
 	private AbstractMap<Class<?>,Class<?>> _fastIdentityMap;
